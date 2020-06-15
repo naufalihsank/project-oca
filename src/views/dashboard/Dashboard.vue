@@ -1,395 +1,121 @@
 <template>
-  <v-container
-    id="dashboard"
-    fluid
-    tag="section"
-  >
-    <v-row>
-      <v-col
-        cols="12"
-        lg="4"
+  <div>
+    <v-card
+      class="pa-5 mx-6"
+      outlined
+    >
+      <v-row class="headline font-weight-bold mx-0 mb-2">
+        Hello, Welcome to OCA!
+      </v-row>
+      <v-row class="mx-0">
+        Let’s start make some noise and make your campaign great again!<span class="main-color">&nbsp;click here &nbsp;</span>to spread your messages.
+      </v-row>
+    </v-card>
+    <div class="mx-6">
+      <v-row class="mx-0">
+        Remaining Quota
+      </v-row>
+      <v-row
+        class="mx-0"
+        justify="space-between"
       >
-        <base-material-chart-card
-          :data="emailsSubscriptionChart.data"
-          :options="emailsSubscriptionChart.options"
-          :responsive-options="emailsSubscriptionChart.responsiveOptions"
-          color="#E91E63"
-          hover-reveal
-          type="Bar"
+        <v-card
+          outlined
+          class="pa-3 mt-2"
+          style="width: 220px"
         >
-          <template v-slot:reveal-actions>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
-                </v-btn>
-              </template>
-
-              <span>Refresh</span>
-            </v-tooltip>
-
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>
-              </template>
-
-              <span>Change Date</span>
-            </v-tooltip>
-          </template>
-
-          <h4 class="card-title font-weight-light mt-2 ml-2">
-            Website Views
-          </h4>
-
-          <p class="d-inline-flex font-weight-light ml-2 mt-1">
-            Last Campaign Performance
-          </p>
-
-          <template v-slot:actions>
-            <v-icon
-              class="mr-1"
-              small
-            >
-              mdi-clock-outline
-            </v-icon>
-            <span class="caption grey--text font-weight-light">updated 10 minutes ago</span>
-          </template>
-        </base-material-chart-card>
-      </v-col>
-
-      <v-col
-        cols="12"
-        lg="4"
-      >
-        <base-material-chart-card
-          :data="dailySalesChart.data"
-          :options="dailySalesChart.options"
-          color="success"
-          hover-reveal
-          type="Line"
-        >
-          <template v-slot:reveal-actions>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
-                </v-btn>
-              </template>
-
-              <span>Refresh</span>
-            </v-tooltip>
-
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>
-              </template>
-
-              <span>Change Date</span>
-            </v-tooltip>
-          </template>
-
-          <h4 class="card-title font-weight-light mt-2 ml-2">
-            Daily Sales
-          </h4>
-
-          <p class="d-inline-flex font-weight-light ml-2 mt-1">
-            <v-icon
-              color="green"
-              small
-            >
-              mdi-arrow-up
-            </v-icon>
-            <span class="green--text">55%</span>&nbsp;
-            increase in today's sales
-          </p>
-
-          <template v-slot:actions>
-            <v-icon
-              class="mr-1"
-              small
-            >
-              mdi-clock-outline
-            </v-icon>
-            <span class="caption grey--text font-weight-light">updated 4 minutes ago</span>
-          </template>
-        </base-material-chart-card>
-      </v-col>
-
-      <v-col
-        cols="12"
-        lg="4"
-      >
-        <base-material-chart-card
-          :data="dataCompletedTasksChart.data"
-          :options="dataCompletedTasksChart.options"
-          hover-reveal
-          color="info"
-          type="Line"
-        >
-          <template v-slot:reveal-actions>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
-                </v-btn>
-              </template>
-
-              <span>Refresh</span>
-            </v-tooltip>
-
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>
-              </template>
-
-              <span>Change Date</span>
-            </v-tooltip>
-          </template>
-
-          <h3 class="card-title font-weight-light mt-2 ml-2">
-            Completed Tasks
-          </h3>
-
-          <p class="d-inline-flex font-weight-light ml-2 mt-1">
-            Last Last Campaign Performance
-          </p>
-
-          <template v-slot:actions>
-            <v-icon
-              class="mr-1"
-              small
-            >
-              mdi-clock-outline
-            </v-icon>
-            <span class="caption grey--text font-weight-light">campaign sent 26 minutes ago</span>
-          </template>
-        </base-material-chart-card>
-      </v-col>
-
-      <v-col
-        cols="12"
-        sm="6"
-        lg="3"
-      >
-        <base-material-stats-card
-          color="info"
-          icon="mdi-twitter"
-          title="Followers"
-          value="+245"
-          sub-icon="mdi-clock"
-          sub-text="Just Updated"
-        />
-      </v-col>
-
-      <v-col
-        cols="12"
-        sm="6"
-        lg="3"
-      >
-        <base-material-stats-card
-          color="primary"
-          icon="mdi-poll"
-          title="Website Visits"
-          value="75.521"
-          sub-icon="mdi-tag"
-          sub-text="Tracked from Google Analytics"
-        />
-      </v-col>
-
-      <v-col
-        cols="12"
-        sm="6"
-        lg="3"
-      >
-        <base-material-stats-card
-          color="success"
-          icon="mdi-store"
-          title="Revenue"
-          value="$ 34,245"
-          sub-icon="mdi-calendar"
-          sub-text="Last 24 Hours"
-        />
-      </v-col>
-
-      <v-col
-        cols="12"
-        sm="6"
-        lg="3"
-      >
-        <base-material-stats-card
-          color="orange"
-          icon="mdi-sofa"
-          title="Bookings"
-          value="184"
-          sub-icon="mdi-alert"
-          sub-icon-color="red"
-          sub-text="Get More Space..."
-        />
-      </v-col>
-
-      <v-col
-        cols="12"
-        md="6"
-      >
-        <base-material-card
-          color="warning"
-          class="px-5 py-3"
-        >
-          <template v-slot:heading>
-            <div class="display-2 font-weight-light">
-              Employees Stats
-            </div>
-
-            <div class="subtitle-1 font-weight-light">
-              New employees on 15th September, 2016
-            </div>
-          </template>
-          <v-card-text>
-            <v-data-table
-              :headers="headers"
-              :items="items"
-            />
-          </v-card-text>
-        </base-material-card>
-      </v-col>
-
-      <v-col
-        cols="12"
-        md="6"
-      >
-        <base-material-card class="px-5 py-3">
-          <template v-slot:heading>
-            <v-tabs
-              v-model="tabs"
-              background-color="transparent"
-              slider-color="white"
-            >
-              <span
-                class="subheading font-weight-light mx-3"
-                style="align-self: center"
-              >Tasks:</span>
-              <v-tab class="mr-3">
-                <v-icon class="mr-2">
-                  mdi-bug
-                </v-icon>
-                Bugs
-              </v-tab>
-              <v-tab class="mr-3">
-                <v-icon class="mr-2">
-                  mdi-code-tags
-                </v-icon>
-                Website
-              </v-tab>
-              <v-tab>
-                <v-icon class="mr-2">
-                  mdi-cloud
-                </v-icon>
-                Server
-              </v-tab>
-            </v-tabs>
-          </template>
-
-          <v-tabs-items
-            v-model="tabs"
-            class="transparent"
+          <v-row
+            class="ma-0 mx-0"
+            justify="space-between"
           >
-            <v-tab-item
-              v-for="n in 3"
-              :key="n"
-            >
-              <v-card-text>
-                <template v-for="(task, i) in tasks[tabs]">
-                  <v-row
-                    :key="i"
-                    align="center"
-                  >
-                    <v-col cols="1">
-                      <v-list-item-action>
-                        <v-checkbox
-                          v-model="task.value"
-                          color="secondary"
-                        />
-                      </v-list-item-action>
-                    </v-col>
-
-                    <v-col cols="9">
-                      <div
-                        class="font-weight-light"
-                        v-text="task.text"
-                      />
-                    </v-col>
-
-                    <v-col
-                      cols="2"
-                      class="text-right"
-                    >
-                      <v-icon class="mx-1">
-                        mdi-pencil
-                      </v-icon>
-                      <v-icon
-                        color="error"
-                        class="mx-1"
-                      >
-                        mdi-close
-                      </v-icon>
-                    </v-col>
-                  </v-row>
-                </template>
-              </v-card-text>
-            </v-tab-item>
-          </v-tabs-items>
-        </base-material-card>
-      </v-col>
-    </v-row>
-  </v-container>
+            <span>Call</span>
+            <span class="call">4840 seconds</span>
+          </v-row>
+        </v-card>
+        <v-card
+          outlined
+          class="pa-3 mt-2"
+          style="width: 220px"
+        >
+          <v-row
+            class="ma-0 mx-0"
+            justify="space-between"
+          >
+            <span>SMS</span>
+            <span class="sms">4840 messages</span>
+          </v-row>
+        </v-card>
+        <v-card
+          outlined
+          class="pa-3 mt-2"
+          style="width: 220px"
+        >
+          <v-row
+            class="ma-0 mx-0"
+            justify="space-between"
+          >
+            <span>Email</span>
+            <span class="email">4840 mails</span>
+          </v-row>
+        </v-card>
+        <v-card
+          outlined
+          class="pa-3 mt-2"
+          style="width: 220px"
+        >
+          <v-row
+            class="ma-0 mx-0"
+            justify="space-between"
+          >
+            <span>Whatsapp</span>
+            <span class="whatsapp">4840 messages</span>
+          </v-row>
+        </v-card>
+      </v-row>
+    </div>
+    <v-card
+      class="pa-4 mx-6 mt-2"
+      outlined
+    >
+      <v-row
+        class="ma-0"
+        justify="space-between"
+      >
+        <span class="main-color">Recent BLAST</span>
+        <div>
+          <v-icon>
+            mdi-sort
+          </v-icon>
+          Sort
+          <v-icon class="ml-5">
+            mdi-filter
+          </v-icon>
+          Filter
+        </div>
+      </v-row>
+      <hr
+        class="mt-2"
+        style="color: rgba(221, 221, 228, 0.36);"
+      >
+      <v-data-table
+        :headers="headers"
+        :items="listTableItem"
+      >
+        <template v-slot:item="{ item }">
+          <tr>
+            <td>{{ item.idName }}</td>
+            <td>{{ item.type }}</td>
+            <td>{{ item.campaign }}</td>
+            <td>{{ item.totalBlast }}</td>
+            <td :class="statusColor(item.status)">
+              {{ item.status }}
+            </td>
+            <td>{{ item.date }}</td>
+          </tr>
+        </template>
+      </v-data-table>
+    </v-card>
+  </div>
 </template>
 
 <script>
@@ -398,84 +124,10 @@
 
     data () {
       return {
-        dailySalesChart: {
-          data: {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            series: [
-              [12, 17, 7, 17, 23, 18, 38],
-            ],
-          },
-          options: {
-            lineSmooth: this.$chartist.Interpolation.cardinal({
-              tension: 0,
-            }),
-            low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: {
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-            },
-          },
-        },
-        dataCompletedTasksChart: {
-          data: {
-            labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
-            series: [
-              [230, 750, 450, 300, 280, 240, 200, 190],
-            ],
-          },
-          options: {
-            lineSmooth: this.$chartist.Interpolation.cardinal({
-              tension: 0,
-            }),
-            low: 0,
-            high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: {
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-            },
-          },
-        },
-        emailsSubscriptionChart: {
-          data: {
-            labels: ['Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju', 'Jul', 'Au', 'Se', 'Oc', 'No', 'De'],
-            series: [
-              [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-
-            ],
-          },
-          options: {
-            axisX: {
-              showGrid: false,
-            },
-            low: 0,
-            high: 1000,
-            chartPadding: {
-              top: 0,
-              right: 5,
-              bottom: 0,
-              left: 0,
-            },
-          },
-          responsiveOptions: [
-            ['screen and (max-width: 640px)', {
-              seriesBarDistance: 5,
-              axisX: {
-                labelInterpolationFnc: function (value) {
-                  return value[0]
-                },
-              },
-            }],
-          ],
-        },
         headers: [
           {
             sortable: false,
-            text: 'ID',
+            text: 'Id Name',
             value: 'id',
           },
           {
@@ -485,58 +137,57 @@
           },
           {
             sortable: false,
-            text: 'Salary',
-            value: 'salary',
-            align: 'right',
+            text: 'Campaign',
+            value: 'campaign',
           },
           {
             sortable: false,
-            text: 'Country',
-            value: 'country',
-            align: 'right',
+            text: 'Total Blast',
+            value: 'totalBlast',
           },
           {
             sortable: false,
-            text: 'City',
-            value: 'city',
-            align: 'right',
+            text: 'Status',
+            value: 'status',
+          },
+          {
+            sortable: false,
+            text: 'Date',
+            value: 'date',
           },
         ],
-        items: [
+        listTableItem: [
           {
-            id: 1,
-            name: 'Dakota Rice',
-            country: 'Niger',
-            city: 'Oud-Tunrhout',
-            salary: '$35,738',
+            idName: 'MTN_EGY-LIFE',
+            type: 'Call',
+            campaign: 'Reminding Billing 20 September',
+            totalBlast: '1255',
+            status: 'Success',
+            date: 'July 15, 2018 4:47 AM',
           },
           {
-            id: 2,
-            name: 'Minerva Hooper',
-            country: 'Curaçao',
-            city: 'Sinaai-Waas',
-            salary: '$23,738',
+            idName: 'MTN_EGY-LIFE',
+            type: 'Call',
+            campaign: 'Reminding Billing 20 September',
+            totalBlast: '1255',
+            status: 'Pending',
+            date: 'July 15, 2018 4:47 AM',
           },
           {
-            id: 3,
-            name: 'Sage Rodriguez',
-            country: 'Netherlands',
-            city: 'Overland Park',
-            salary: '$56,142',
+            idName: 'MTN_EGY-LIFE',
+            type: 'Call',
+            campaign: 'Reminding Billing 20 September',
+            totalBlast: '1255',
+            status: 'Progress',
+            date: 'July 15, 2018 4:47 AM',
           },
           {
-            id: 4,
-            name: 'Philip Chanley',
-            country: 'Korea, South',
-            city: 'Gloucester',
-            salary: '$38,735',
-          },
-          {
-            id: 5,
-            name: 'Doris Greene',
-            country: 'Malawi',
-            city: 'Feldkirchen in Kārnten',
-            salary: '$63,542',
+            idName: 'MTN_EGY-LIFE',
+            type: 'Call',
+            campaign: 'Reminding Billing 20 September',
+            totalBlast: '1255',
+            status: 'Failed',
+            date: 'July 15, 2018 4:47 AM',
           },
         ],
         tabs: 0,
@@ -591,11 +242,50 @@
         },
       }
     },
-
     methods: {
       complete (index) {
         this.list[index] = !this.list[index]
       },
+      statusColor (value) {
+        if (value === 'Success') {
+          return 'success-green'
+        } else if (value === 'Progress') {
+          return 'progress'
+        } else if (value === 'Pending') {
+          return 'pending'
+        } else {
+          return 'failed'
+        }
+      },
     },
   }
 </script>
+<style scoped>
+.main-color {
+  color: #ed1260 !important;
+}
+.success-green {
+  color: #61C378 !important;
+}
+.progress {
+  color: #41AFFF !important;
+}
+.pending {
+  color: #F3A356 !important;
+}
+.failed {
+  color: #DA5E5B !important;
+}
+.call {
+  color: #22B9FF !important;
+}
+.sms {
+  color: #FFB822 !important;
+}
+.email {
+  color: #F554E9 !important;
+}
+.whatsapp {
+  color: #1DC9B7 !important;
+}
+</style>
