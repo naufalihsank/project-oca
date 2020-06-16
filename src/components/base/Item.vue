@@ -4,19 +4,30 @@
     :rel="href && href !== '#' ? 'noopener' : undefined"
     :target="href && href !== '#' ? '_blank' : undefined"
     :to="item.to"
-    :active-class="`primary ${!isDark ? 'black' : 'white'}--text`"
+    active-class="active"
   >
-    <v-list-item-icon
-      v-if="text"
-      class="v-list-item__icon--text"
-      v-text="computedText"
-    />
+    <v-list-item-icon v-if="item.isChild">
+      <v-icon
+        class="flip"
+        v-text="item.icon"
+      />
+    </v-list-item-icon>
 
     <v-list-item-icon v-else-if="item.icon">
       <v-icon v-text="item.icon" />
     </v-list-item-icon>
 
-    <v-list-item-content v-if="item.title || item.subtitle">
+    <v-list-item-icon v-else>
+      <v-icon />
+    </v-list-item-icon>
+
+    <v-list-item-content v-if="item.title || item.subtitle && item.icon">
+      <v-list-item-title v-text="item.title" />
+
+      <v-list-item-subtitle v-text="item.subtitle" />
+    </v-list-item-content>
+
+    <v-list-item-content v-else-if="item.title || item.subtitle">
       <v-list-item-title v-text="item.title" />
 
       <v-list-item-subtitle v-text="item.subtitle" />
@@ -67,3 +78,16 @@
     },
   }
 </script>
+<style scoped>
+.active {
+  border-bottom:1px solid #fff;
+  border-width: 5px;
+}
+.flip {
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+</style>

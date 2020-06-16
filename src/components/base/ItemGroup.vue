@@ -121,4 +121,13 @@
 .v-list-group__activator p {
   margin-bottom: 0;
 }
+.v-list-item__content {
+  color: white;
+}
+.v-list-item__icon {
+  color: white;
+}
+.theme--light.v-icon {
+  color: white;
+}
 </style>

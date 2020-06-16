@@ -84,20 +84,24 @@
         {
           icon: 'mdi-home',
           title: 'home',
-          to: '/',
+          to: '/dashboard',
         },
         {
           icon: 'mdi-message-processing',
           title: 'sms',
-          to: '/pages/user',
+          to: '/pages',
           children: [
             {
+              icon: 'mdi-keyboard-return',
+              isChild: true,
               title: 'broadcast',
               to: '/',
             },
             {
+              icon: 'mdi-keyboard-return',
+              isChild: true,
               title: 'sms_scheduler',
-              to: '/pages/user',
+              to: 'dashboard/pages/user',
             },
           ],
         },

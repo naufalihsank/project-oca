@@ -42,7 +42,7 @@
     >
       <v-icon
         large
-        color="#C6CCD1"
+        style="color: #C6CCD1 !important"
       >
         mdi-account-circle
       </v-icon>
@@ -85,3 +85,8 @@
     },
   }
 </script>
+<style scoped>
+.theme--light.v-icon  {
+  color: black !important;
+}
+</style>
