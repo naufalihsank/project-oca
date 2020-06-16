@@ -18,13 +18,13 @@ export default new Router({
       children: [
         // Dashboard
         {
-          name: 'Dashboard',
+          name: 'Home',
           path: '/dashboard',
           component: () => import('@/views/dashboard/Dashboard'),
         },
         // Pages
         {
-          name: 'User Profile',
+          name: 'SMS',
           path: 'pages/user',
           component: () => import('@/views/dashboard/pages/UserProfile'),
         },

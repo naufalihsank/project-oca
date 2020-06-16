@@ -41,5 +41,9 @@
   "user": "User Profile",
   "vforms": "Validation Forms",
   "widgets": "Widgets",
-  "wizard": "Wizard"
+  "wizard": "Wizard",
+  "home": "Home",
+  "sms": "SMS",
+  "broadcast": "Broadcast",
+  "sms_scheduler": "SMS Scheduler"
 }

@@ -2,13 +2,12 @@
   <v-navigation-drawer
     id="core-navigation-drawer"
     v-model="drawer"
-    :dark="barColor !== 'rgba(228, 226, 226, 1), rgba(255, 255, 255, 0.7)'"
+    color="#ed1260"
     :expand-on-hover="expandOnHover"
     :right="$vuetify.rtl"
-    :src="barImage"
     mobile-break-point="960"
     app
-    width="260"
+    width="220"
     v-bind="$attrs"
   >
     <template v-slot:img="props">
@@ -25,27 +24,13 @@
       nav
     >
       <v-list-item>
-        <v-list-item-avatar
-          class="align-self-center"
-          color="white"
-          contain
-        >
-          <v-img
-            src="https://demos.creative-tim.com/vuetify-material-dashboard/favicon.ico"
-            max-height="30"
-          />
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title
-            class="display-1"
-            v-text="profile.title"
-          />
-        </v-list-item-content>
+        <v-img
+          class="my-6"
+          src="@/assets/OCA-logo.svg"
+          max-height="50"
+        />
       </v-list-item>
     </v-list>
-
-    <v-divider class="mb-2" />
 
     <v-list
       expand
@@ -75,16 +60,6 @@
       <!-- https://github.com/vuetifyjs/vuetify/pull/8574 -->
       <div />
     </v-list>
-
-    <template v-slot:append>
-      <base-item
-        :item="{
-          title: $t('upgrade'),
-          icon: 'mdi-package-up',
-          to: '/upgrade',
-        }"
-      />
-    </template>
   </v-navigation-drawer>
 </template>
 
@@ -107,39 +82,24 @@
     data: () => ({
       items: [
         {
-          icon: 'mdi-view-dashboard',
-          title: 'dashboard',
+          icon: 'mdi-home',
+          title: 'home',
           to: '/',
         },
         {
-          icon: 'mdi-account',
-          title: 'user',
+          icon: 'mdi-message-processing',
+          title: 'sms',
           to: '/pages/user',
-        },
-        {
-          title: 'rtables',
-          icon: 'mdi-clipboard-outline',
-          to: '/tables/regular-tables',
-        },
-        {
-          title: 'typography',
-          icon: 'mdi-format-font',
-          to: '/components/typography',
-        },
-        {
-          title: 'icons',
-          icon: 'mdi-chart-bubble',
-          to: '/components/icons',
-        },
-        {
-          title: 'google',
-          icon: 'mdi-map-marker',
-          to: '/maps/google-maps',
-        },
-        {
-          title: 'notifications',
-          icon: 'mdi-bell',
-          to: '/components/notifications',
+          children: [
+            {
+              title: 'broadcast',
+              to: '/',
+            },
+            {
+              title: 'sms_scheduler',
+              to: '/pages/user',
+            },
+          ],
         },
       ],
     }),
