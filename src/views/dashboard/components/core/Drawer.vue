@@ -101,6 +101,11 @@
             },
           ],
         },
+        {
+          icon: 'mdi-home',
+          title: 'sms_scheduler',
+          to: '/dashboard/pages/user',
+        },
       ],
     }),
 
