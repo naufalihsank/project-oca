@@ -8,13 +8,18 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      name: 'Login Page',
       path: '/',
+      component: () => import('@/views/dashboard/Login.vue'),
+    },
+    {
+      path: '/dashboard',
       component: () => import('@/views/dashboard/Index'),
       children: [
         // Dashboard
         {
           name: 'Home',
-          path: '',
+          path: '/dashboard',
           component: () => import('@/views/dashboard/Dashboard'),
         },
         // Pages
