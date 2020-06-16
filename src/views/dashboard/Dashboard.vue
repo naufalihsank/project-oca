@@ -8,69 +8,93 @@
         Hello, Welcome to OCA!
       </v-row>
       <v-row class="mx-0">
-        Let’s start make some noise and make your campaign great again!<span class="main-color">&nbsp;click here &nbsp;</span>to spread your messages.
+        Let’s start make some noise and make your campaign great again!<a class="main-color mx-1">click here</a>to spread your messages.
       </v-row>
     </v-card>
     <div class="mx-6">
-      <v-row class="mx-0">
+      <v-row class="mx-0 remaining-quota">
         Remaining Quota
       </v-row>
       <v-row
-        class="mx-0"
+        class="mx-0 mt-2"
         justify="space-between"
       >
-        <v-card
-          outlined
-          class="pa-3 mt-2"
-          style="width: 220px"
+        <v-col
+          class="pa-0 pr-2"
+          cols="12"
+          md="3"
         >
-          <v-row
-            class="ma-0 mx-0"
-            justify="space-between"
+          <v-card
+            outlined
+            class="pa-3 mt-2"
           >
-            <span>Call</span>
-            <span class="call">4840 seconds</span>
-          </v-row>
-        </v-card>
-        <v-card
-          outlined
-          class="pa-3 mt-2"
-          style="width: 220px"
+            <v-row
+              class="ma-0 mx-0"
+              justify="space-between"
+              align="center"
+            >
+              <span class="sub-quota">Call</span>
+              <span class="call sub-quota-data">4840 seconds</span>
+            </v-row>
+          </v-card>
+        </v-col>
+        <v-col
+          class="pa-0 px-2"
+          cols="12"
+          md="3"
         >
-          <v-row
-            class="ma-0 mx-0"
-            justify="space-between"
+          <v-card
+            outlined
+            class="pa-3 mt-2"
           >
-            <span>SMS</span>
-            <span class="sms">4840 messages</span>
-          </v-row>
-        </v-card>
-        <v-card
-          outlined
-          class="pa-3 mt-2"
-          style="width: 220px"
+            <v-row
+              class="ma-0 mx-0"
+              justify="space-between"
+              align="center"
+            >
+              <span class="sub-quota">SMS</span>
+              <span class="sms sub-quota-data">4840 messages</span>
+            </v-row>
+          </v-card>
+        </v-col>
+        <v-col
+          class="pa-0 px-2"
+          cols="12"
+          md="3"
         >
-          <v-row
-            class="ma-0 mx-0"
-            justify="space-between"
+          <v-card
+            outlined
+            class="pa-3 mt-2"
           >
-            <span>Email</span>
-            <span class="email">4840 mails</span>
-          </v-row>
-        </v-card>
-        <v-card
-          outlined
-          class="pa-3 mt-2"
-          style="width: 220px"
+            <v-row
+              class="ma-0 mx-0"
+              justify="space-between"
+              align="center"
+            >
+              <span class="sub-quota">Email</span>
+              <span class="email sub-quota-data">4840 mails</span>
+            </v-row>
+          </v-card>
+        </v-col>
+        <v-col
+          class="pa-0 pl-2"
+          cols="12"
+          md="3"
         >
-          <v-row
-            class="ma-0 mx-0"
-            justify="space-between"
+          <v-card
+            outlined
+            class="pa-3 mt-2"
           >
-            <span>Whatsapp</span>
-            <span class="whatsapp">4840 messages</span>
-          </v-row>
-        </v-card>
+            <v-row
+              class="ma-0 mx-0"
+              justify="space-between"
+              align="center"
+            >
+              <span class="sub-quota">Whatsapp</span>
+              <span class="whatsapp sub-quota-data">4840 messages</span>
+            </v-row>
+          </v-card>
+        </v-col>
       </v-row>
     </div>
     <v-card
@@ -81,7 +105,7 @@
         class="ma-0"
         justify="space-between"
       >
-        <span class="main-color">Recent BLAST</span>
+        <span class="main-color sub-quota-data">Recent BLAST</span>
         <div>
           <v-icon>
             mdi-sort
@@ -287,5 +311,17 @@
 }
 .whatsapp {
   color: #1DC9B7 !important;
+}
+.sub-quota {
+  color: #777777 !important;
+  font-size: 12px;
+}
+.sub-quota-data {
+  font-size: 18px;
+}
+.remaining-quota {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 18px;
+  font-weight: bold;
 }
 </style>

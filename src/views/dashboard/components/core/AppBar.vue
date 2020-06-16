@@ -23,7 +23,10 @@
     <div class="mx-3" />
 
     <div class="text-align-right">
-      <v-row justify="end">
+      <v-row
+        class="font-weight-bold"
+        justify="end"
+      >
         Hi, Adjie!
       </v-row>
       <v-row justify="end">

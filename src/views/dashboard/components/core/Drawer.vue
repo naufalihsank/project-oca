@@ -97,7 +97,7 @@
             },
             {
               title: 'sms_scheduler',
-              to: '/',
+              to: '/pages/user',
             },
           ],
         },
