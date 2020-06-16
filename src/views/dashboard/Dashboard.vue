@@ -1,10 +1,14 @@
 <template>
   <div>
     <v-card
+      style="border-top:6px solid #ed1260;"
       class="pa-5 mx-6"
       outlined
     >
-      <v-row class="headline font-weight-bold mx-0 mb-2">
+      <v-row
+        class="font-weight-bold mx-0 mb-2"
+        style="font-family: 'Lato', sans-serif; font-size: 24px; color: #312F30;"
+      >
         Hello, Welcome to OCA!
       </v-row>
       <v-row class="mx-0">
@@ -107,11 +111,14 @@
       >
         <span class="main-color sub-quota-data">Recent BLAST</span>
         <div>
-          <v-icon>
+          <v-icon color="#c5c7cd">
             mdi-sort
           </v-icon>
           Sort
-          <v-icon class="ml-5">
+          <v-icon
+            color="#c5c7cd"
+            class="ml-5"
+          >
             mdi-filter
           </v-icon>
           Filter
