@@ -1,178 +1,225 @@
 <template>
-  <v-container
-    id="user-profile"
-    fluid
-    tag="section"
-  >
-    <v-row justify="center">
-      <v-col
-        cols="12"
-        md="8"
-      >
-        <base-material-card>
-          <template v-slot:heading>
-            <div class="display-2 font-weight-light">
-              Edit Profile
-            </div>
-
-            <div class="subtitle-1 font-weight-light">
-              Complete your profile
-            </div>
-          </template>
-
-          <v-form>
-            <v-container class="py-0">
-              <v-row>
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    label="Company (disabled)"
-                    disabled
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    class="purple-input"
-                    label="User Name"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    label="Email Address"
-                    class="purple-input"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="6"
-                >
-                  <v-text-field
-                    label="First Name"
-                    class="purple-input"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="6"
-                >
-                  <v-text-field
-                    label="Last Name"
-                    class="purple-input"
-                  />
-                </v-col>
-
-                <v-col cols="12">
-                  <v-text-field
-                    label="Adress"
-                    class="purple-input"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    label="City"
-                    class="purple-input"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    label="Country"
-                    class="purple-input"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    class="purple-input"
-                    label="Postal Code"
-                    type="number"
-                  />
-                </v-col>
-
-                <v-col cols="12">
-                  <v-textarea
-                    class="purple-input"
-                    label="About Me"
-                    value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  class="text-right"
-                >
-                  <v-btn
-                    color="success"
-                    class="mr-0"
-                  >
-                    Update Profile
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-form>
-        </base-material-card>
-      </v-col>
-
-      <v-col
-        cols="12"
-        md="4"
-      >
-        <base-material-card
-          class="v-card-profile"
-          avatar="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg"
-        >
-          <v-card-text class="text-center">
-            <h6 class="display-1 mb-1 grey--text">
-              CEO / CO-FOUNDER
-            </h6>
-
-            <h4 class="display-2 font-weight-light mb-3 black--text">
-              Alec Thompson
-            </h4>
-
-            <p class="font-weight-light grey--text">
-              Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-            </p>
-
-            <v-btn
-              color="success"
-              rounded
-              class="mr-0"
-            >
-              Follow
-            </v-btn>
-          </v-card-text>
-        </base-material-card>
+  <v-container class="container-style">
+    <v-row>
+      <v-col>
+        <span class="headline">SMS Scheduller</span>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col cols="3">
+        <span><b>Broadcast Name</b></span>
+        <v-text-field
+          outlined
+          placeholder="name of your broadcast"
+        />
+      </v-col>
+    </v-row>
+    <v-row style="margin-top: -30px">
+      <v-col cols="3">
+        <span><b>Phonebook</b></span>
+        <v-select
+          outlined
+          placeholder="Select your Phonebook"
+        />
+      </v-col>
+    </v-row>
+    <v-row style="margin-top: -30px">
+      <v-col cols="9">
+        <span><b>Message</b></span>
+        <v-text-field
+          outlined
+          height="191"
+        />
+      </v-col>
+    </v-row>
+    <hr>
+    <br>
+    <div>
+      <span class="headline"><b>Schedule</b></span>
+      <br>
+      <span class="text-style-sub-title">When and how often do you want to broadcast this message?</span>
+    </div>
+    <v-row>
+      <v-col
+        cols="2"
+        style="margin-top: 20px"
+      >
+        <span><b>Run on</b></span>
+      </v-col>
+      <v-col cols="1">
+        <v-checkbox
+          label="Mon"
+          color="#ed1260"
+        />
+      </v-col>
+      <v-col cols="1">
+        <v-checkbox
+          label="Tue"
+          color="#ed1260"
+        />
+      </v-col>
+      <v-col cols="1">
+        <v-checkbox
+          label="Wed"
+          color="#ed1260"
+        />
+      </v-col>
+      <v-col cols="1">
+        <v-checkbox
+          label="Thu"
+          color="#ed1260"
+        />
+      </v-col>
+      <v-col cols="1">
+        <v-checkbox
+          label="Fri"
+          color="#ed1260"
+        />
+      </v-col>
+      <v-col cols="1">
+        <v-checkbox
+          label="Sat"
+          color="#ed1260"
+        />
+      </v-col>
+      <v-col cols="1">
+        <v-checkbox
+          label="Sun"
+          color="#ed1260"
+        />
+      </v-col>
+    </v-row>
+    <div>
+      <v-row style="margin-top: -20px">
+        <v-col
+          cols="2"
+          offset="2"
+        >
+          <v-radio-group
+            v-model="radio"
+            @change="setTime()"
+          >
+            <div>
+              <v-radio
+                label="Once a day"
+                color="#ed1260"
+                style="margin-top: -10px"
+              />
+            </div>
+            <br>
+            <div>
+              <v-radio
+                label="At intervals"
+                color="#ed1260"
+              />
+            </div>
+          </v-radio-group>
+        </v-col>
+        <v-col>
+          <v-row>
+            <v-col cols="1">
+              <span>At</span>
+            </v-col>
+            <v-col cols="1">
+              <input
+                type="number"
+                class="time-input"
+                :disabled="!isOnceADay"
+              >
+            </v-col>
+            <v-col cols="1">
+              <span>WIB</span>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="1">
+              <span>Every</span>
+            </v-col>
+            <v-col cols="1">
+              <input
+                type="number"
+                class="time-input"
+                :disabled="!isInterval"
+              >
+            </v-col>
+            <v-col cols="2">
+              <select
+                class="select-input"
+                :disabled="!isInterval"
+              >
+                <option>Minutes</option>
+                <option>Hours</option>
+              </select>
+            </v-col>
+            <v-col cols="1">
+              <span>from</span>
+            </v-col>
+            <v-col cols="1">
+              <input
+                type="number"
+                class="time-input"
+                :disabled="!isInterval"
+              >
+            </v-col>
+            <v-col cols="1">
+              <span>WIB</span>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </div>
+    <v-col
+      cols="2"
+      offset="7"
+    >
+      <v-btn
+        color="#ed1260"
+      >
+        Send Message
+      </v-btn>
+    </v-col>
+    <br>
   </v-container>
 </template>
 
 <script>
   export default {
-    //
+    name: 'SmsScheduller',
+    data () {
+      return {
+        radio: null,
+        isOnceADay: false,
+        isInterval: false,
+      }
+    },
+    methods: {
+      setTime (value) {
+        if (this.radio === 0) {
+          this.isOnceADay = true
+          this.isInterval = false
+        } else if (this.radio === 1) {
+          this.isOnceADay = false
+          this.isInterval = true
+        }
+      },
+    },
   }
 </script>
+<style scoped>
+  .container-style {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .select-input {
+    border: 1px solid black;
+    width: 100px;
+  }
+  .time-input {
+    border: 1px solid black;
+    width: 50px;
+  }
+  .text-style-sub-title {
+    font-style: italic;
+    color: grey;
+  }
+</style>
